@@ -1,27 +1,29 @@
-import { useState } from 'react'
 import './App.css'
+import Test from './components/test.jsx'
+import { BrowserRouter } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './pages/homePage.jsx'
+import LoginPage from './pages/loginPage.jsx'
+import RegisterPage from './pages/registerPage.jsx'
+import AdminPage from './pages/adminPage.jsx'
 
 function App() {
 
   return (
-    <div className="w-[700px] h-[700px] border bg-pink-400 relative" >
-      <div className='w-[500px] h-[500px] bg-yellow-500 flex flex-col justify-center items-center' >
-        <div className='w-[100px] h-[100px] bg-blue-500'>
 
-        </div>
-        <div className='w-[100px] h-[100px] bg-red-500 fixed left-[550px] top-[550px]'>
+    <BrowserRouter>
+      <div className="w-full h-screen bg-primary text-secondary">
+        <Routes path="/">
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/admin" element={<AdminPage />} />
 
-        </div>
-        <div className='w-[100px] h-[100px] bg-green-500'>
+        </Routes>                               
 
-        </div>
-        <div className='w-[100px] h-[100px] bg-gray-500 absolute left-[300px] top-[300px]'>
-
-        </div>
-      </div> 
-
-    </div>
-  )
+      </div>
+    </BrowserRouter> 
+  );
 }
 
 export default App
