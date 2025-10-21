@@ -20,6 +20,11 @@ export default function LoginPage() {
                 password: password
             });
             console.log(res)
+            //store the token in local storage
+            localStorage.setItem("token", res.data.token);
+
+            // Get the token from local storage
+            const token = localStorage.getItem("token"); //dan apita onema thanakdi token eka ganna puluwan token kiyana key eka use karala
 
             if(res.data.role === 'admin'){
                 navigate('/admin');
