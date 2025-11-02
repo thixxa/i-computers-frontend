@@ -4,6 +4,7 @@ import { AiOutlineProduct } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import axios from "axios";
+import uploadFile from "../../utils/mediaUpload";
 
 export default function AdminAddProductPage() {
 
@@ -13,7 +14,7 @@ export default function AdminAddProductPage() {
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState(0);
     const [labelledPrice, setLabelledPrice] = useState(0);
-    const [images, setImages] = useState("");
+    const [files, setFiles] = useState([]);
     const [category, setCategory] = useState('');
     const [brand, setBrand] = useState('');
     const [model, setModel] = useState('');
@@ -30,6 +31,25 @@ export default function AdminAddProductPage() {
             navigate('/login');
             return;
         }
+
+        console.log(files);
+        const imagePromises = []
+
+        for(let i=0; i<files.length; i++){
+            const promise = uploadFile(files[i])
+            imagePromises.push(promise);
+        }
+
+        const images = await Promise.all(imagePromises).catch(
+            (err)=>{
+                toast.error("Error uploading images. Please try again");
+                console.log(err);
+                return;
+            }
+        )
+
+
+
         if(productID == "" || name == "" || description == "" || category == "" || brand == "" || model == "") {
             toast.error('Please fill in all fields.');
             return;
@@ -37,7 +57,6 @@ export default function AdminAddProductPage() {
 
         try{
             const altNamesArray = altNames.split(',') // Split alternative names by commas and trim whitespace
-            const imagesArray = images.split(',') // Split image URLs by commas and trim whitespace
 
             await axios.post(import.meta.env.VITE_BACKEND_URL + "/products/", {
                 productID : productID,
@@ -46,7 +65,7 @@ export default function AdminAddProductPage() {
                 description : description,
                 price : price,
                 labelledPrice : labelledPrice,
-                images : imagesArray,
+                images : images,
                 category : category,
                 brand : brand,
                 model : model,
@@ -70,7 +89,7 @@ export default function AdminAddProductPage() {
 
     
     return (
-        <div className="w-full h-full flex justify-center items-start overflow-y-scroll p-[50px]">
+        <div className="w-full h-full flex justify-center items-start p-[50px]">
             <div className="w-[800px] bg-accent/65 rounded-2xl p-[40px]">
                 <h1 className="w-full text-xl text-white mb-[20px] text-center"><AiOutlineProduct className="inline-block mr-[10px] text-2xl" />
                     Add New Product
@@ -130,9 +149,12 @@ export default function AdminAddProductPage() {
                     </div>
                     <div className="my-[10px] w-full">
                         <label>Images</label>
-                        <textarea
-                            value={images}
-                            onChange={(e) => { setImages(e.target.value) }}
+                        <input 
+                            type = "file"
+                            multiple = {true}
+                            onChange={(e)=>{
+                                setFiles(e.target.files);
+                            }}
                             className="w-full h-[100px] border-[1px] border-accent shadow-2xl rounded-2xl px-[20px] py-[10px] mb-[10px] focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
                     </div>

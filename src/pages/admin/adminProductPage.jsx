@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import toast from "react-hot-toast";
 import Loader from "../../components/loader";
+import ProductDeleteButton from "../../components/productDeleteButton";
 
 export default function AdminProductPage() {
   const [products, setProducts] = useState([]);
@@ -102,27 +103,7 @@ export default function AdminProductPage() {
                       </td>
                       <td className="px-5 py-4">
                         <div className="flex items-center gap-2 text-sm text-accent">
-                          {/* Placeholder for future action buttons/links */}
-                          <button
-                            onClick={
-                                ()=>{
-                                    const token = localStorage.getItem("token"); 
-                                    axios.delete(import.meta.env.VITE_BACKEND_URL + "/products/" + item.productID , {
-                                        headers: {
-                                            Authorization: `Bearer ${token}`
-                                        }
-                                    })
-                                    .then(
-                                        ()=>{
-                                            toast.success("Product delete successfully");
-                                            setLoaded(false)
-                                        }
-                                    )
-                                }     
-                            } 
-                            className="w-[100px] bg-red-400 flex justify-center items-center text-white p-2 rounded-lg cursor-pointer hover:bg-red-600">
-                            Delete
-                          </button>
+                          <ProductDeleteButton productID={item.productID} autoReload= {()=>{setLoaded(flase)}}/>
                           <div className="cursor-default select-none opacity-60">
                           </div>
                         </div>
