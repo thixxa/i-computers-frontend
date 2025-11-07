@@ -3,11 +3,13 @@ import { Routes, Route } from "react-router-dom"
 import { Link } from "react-router-dom"
 import AdminProductPage from "./admin/adminProductPage.jsx"
 import AdminAddProductPage from "./admin/adminAddProductPage.jsx"
+import AdminUpdateProductPage from "./admin/adminUpdateProductPage.jsx"
 
 import { LuClipboardList } from "react-icons/lu";
 import { LuBoxes } from "react-icons/lu";
 import { FiUsers } from "react-icons/fi";
 import { MdReviews } from "react-icons/md";
+
 
 
 
@@ -36,6 +38,7 @@ export default function AdminPage() {
                     <Route path='/' element={<h1 className="text-3xl text-black">Orders</h1>} />
                     <Route path='/products' element={<AdminProductPage />} />
                     <Route path='/add-product' element={<AdminAddProductPage />} />
+                    <Route path='/update-product' element={<AdminUpdateProductPage/>}/>
                     <Route path='/users' element={<h1 className="text-3xl text-black">Users</h1>} />
                     <Route path='/reviews' element={<h1 className="text-3xl text-black">Reviews</h1>} />
 

@@ -97,14 +97,23 @@ export default function AdminProductPage() {
                         </div>
                       </td>
                       <td className="px-5 py-4">
-                        <div className="inline-block rounded-full bg-secondary/5 px-3 py-1 text-xs">
-                          {item.isAvailable}
+                        <div className="inline-block px-3 py-1 text-xs">
+                          {item.isAvailable? "Available": "Unavailable"}
                         </div>
                       </td>
                       <td className="px-5 py-4">
                         <div className="flex items-center gap-2 text-sm text-accent">
+                          <Link
+                            to="/admin/update-product"
+                            className="px-3 py-2 rounded-md w-[90px] text-center text-white bg-accent"
+                            //state eka ganne data dala yawanna. apita danata product eke wisathara tika one hinda. 
+                            //api wenas karanne danata thiyena wisthara ne. 
+                            //state eken danata thiyena wisthara tika dala yawanawa
+                            state={item}> 
+                              Edit 
+                          </Link>
                           <ProductDeleteButton productID={item.productID} autoReload= {()=>{setLoaded(flase)}}/>
-                          <div className="cursor-default select-none opacity-60">
+                          <div className="cursor-default select-none opacity-60"> 
                           </div>
                         </div>
                       </td>
