@@ -1,0 +1,93 @@
+import { useState } from "react";
+import { BsChevronUp, BsChevronDown } from "react-icons/bs";
+import { useLocation, useNavigate } from "react-router-dom";
+
+
+
+export default function CheckOutPage(){
+
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const [cart, setCart] = useState(location.state);
+
+    if(location.state == null){
+        navigate("/products");
+    }
+
+    function getTotalAmount(){
+        let total = 0;
+        cart.forEach(
+            (item)=>{
+                total += item.price * item.quantity;
+            }
+        )
+        return total;
+    }
+
+    return(
+        <div className="w-full flex flex-col items-center p-[20px] gap-4 justify-between">
+            {
+                cart.map(
+                    (item, index)=>{
+                        return(
+                            <div className="w-[50%] h-[150px] rounded-xl overflow-hidden flex my-1 shadow-2xl justify-between ">
+                                <img src={item.image} className="h-full aspect-square object-cover"/>
+                                <div className="w-[300px] flex flex-col justify-center p-4 gap-2">
+                                    <h1 className="text-2xl font-semibold text-secondary">{item.name}</h1>
+                                    <h3>ProductID: {item.productID}</h3>
+                                    <h2 className="text-md text-secondary/80 line-through">
+                                        LKR. {(item.labelledPrice).toFixed(2)}
+                                    </h2>
+                                    <h2 className="text-lg text-accent/80 font-semibold">
+                                        LKR. {(item.price).toFixed(2)} 
+                                    </h2>
+                                </div>
+                                <div className="h-full flex flex-row items-center gap-4">
+                                    <div className="h-full flex flex-col justify-center items-center">
+                                        <BsChevronUp 
+                                            onClick={
+                                                ()=>{
+                                                    const copiedCart = [...cart]; //copy ekak hadanawa cart eke
+                                                    copiedCart[index].quantity += 1;
+                                                    setCart(copiedCart);
+                                                }
+                                            }
+                                            className="text-2xl text-secondary cursor-pointer hover:text-accent"/>
+                                        <span className="text-lg font-semibold text-secondary">{item.quantity}</span>
+                                        <BsChevronDown 
+                                            onClick={
+                                                ()=>{
+                                                    const copiedCart = [...cart];
+                                                    copiedCart[index].quantity -= 1;
+                                                    if(copiedCart[index].quantity <= 0){
+                                                        copiedCart.splice(index, 1);
+                                                    }
+                                                    setCart(copiedCart);
+                                                }
+                                            }
+                                            className="text-2xl text-secondary cursor-pointer hover:text-accent"/>
+                                    </div>
+                                    <span className="w-[150px] pr-4 text-lg text-right text-accent font-semibold">
+                                       LKR. {(item.price * item.quantity).toFixed(2)}
+                                    </span>
+
+                                </div>
+
+
+                            </div>
+                        )
+                    }
+                )  
+            }
+            <div className="w-[50%] h-[100px] rounded-xl overflow-hidden flex my-1 shadow-2xl justify-between items-center">
+                <button className=" h-[50px] bg-accent/80 hover:bg-accent text-white px-4 py-2 rounded m-4">
+                    Order Now
+                </button>
+                <span className="w-[150px] pr-4 text-xl font-bold text-right text-accent">
+                    LKR. {getTotalAmount().toFixed(2)}
+                </span>                   
+            </div>
+        </div>
+    )
+}
