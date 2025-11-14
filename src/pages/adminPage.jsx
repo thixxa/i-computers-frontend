@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import AdminProductPage from "./admin/adminProductPage.jsx"
 import AdminAddProductPage from "./admin/adminAddProductPage.jsx"
 import AdminUpdateProductPage from "./admin/adminUpdateProductPage.jsx"
+import AdminOrdersPage from "./admin/adminOrdersPage.jsx"
 
 import { LuClipboardList } from "react-icons/lu";
 import { LuBoxes } from "react-icons/lu";
@@ -35,7 +36,7 @@ export default function AdminPage() {
             </div>
             <div className="w-[calc(100%-300px)] h-full max-h-full bg-primary border-[5px] border-accent flex flex-col rounded-3xl overflow-y-scroll">
                 <Routes>
-                    <Route path='/' element={<h1 className="text-3xl text-black">Orders</h1>} />
+                    <Route path='/' element={<AdminOrdersPage />} />
                     <Route path='/products' element={<AdminProductPage />} />
                     <Route path='/add-product' element={<AdminAddProductPage />} />
                     <Route path='/update-product' element={<AdminUpdateProductPage/>}/>

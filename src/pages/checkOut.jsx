@@ -1,6 +1,8 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { BsChevronUp, BsChevronDown } from "react-icons/bs";
 import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 
 
@@ -8,6 +10,9 @@ export default function CheckOutPage(){
 
     const location = useLocation();
     const navigate = useNavigate();
+    const [name, setName] = useState("");
+    const [address, setAddress] = useState("");
+    const [phone, setPhone] = useState("");
 
     const [cart, setCart] = useState(location.state);
 
@@ -25,13 +30,54 @@ export default function CheckOutPage(){
         return total;
     }
 
+    async function submitOrder(){
+        //order eka submit karanna
+        const token = localStorage.getItem("token");
+        if(!token){
+            toast.error("Please login to place an order");
+            navigate("/login");
+            return;
+        }
+
+        const orderItems = []
+
+        cart.forEach(
+            (item)=>{
+                orderItems.push({
+                    productID: item.productID,
+                    quantity: item.quantity,
+                })
+            }
+        );
+        axios.post(import.meta.env.VITE_BACKEND_URL + "/orders",
+            {
+                name: name,
+                address: address,
+                phone: phone,
+                items: orderItems,
+            },
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            }
+        ).then(()=>{
+            toast.success("Order placed successfully");
+            navigate("/orders");
+        }).catch(
+            (error)=>{
+                toast.error("Error placing order. Please try again");
+            }
+        )
+    }
+
     return(
         <div className="w-full flex flex-col items-center p-[20px] gap-4 justify-between">
             {
                 cart.map(
                     (item, index)=>{
                         return(
-                            <div className="w-[50%] h-[150px] rounded-xl overflow-hidden flex my-1 shadow-2xl justify-between ">
+                            <div className="w-[50%] h-[150px] rounded-xl overflow-hidden flex my-1 shadow-2xl justify-between" key={item.productID || index}>
                                 <img src={item.image} className="h-full aspect-square object-cover"/>
                                 <div className="w-[300px] flex flex-col justify-center p-4 gap-2">
                                     <h1 className="text-2xl font-semibold text-secondary">{item.name}</h1>
@@ -80,8 +126,52 @@ export default function CheckOutPage(){
                     }
                 )  
             }
+            <div className="w-[50%] h-[200px] rounded-xl overflow-hidden flex flex-wrap my-1 shadow-2xl justify-between items-center">
+                <div className="flex flex-col w-[50%]">
+                <label>Name</label>
+                <input 
+                    type="text" 
+                    className="h-[50px] w-[70%] border-2 border-secondary/50 rounded px-4"
+                    value={name}
+                    onChange={
+                        (e)=>{
+                            setName(e.target.value);
+                        }
+                    }
+                />
+                </div>
+                
+                <div className="flex flex-col w-[50%]">
+                <label>Phone</label>
+                <input 
+                    type="text" 
+                    className="h-[50px] w-[70%] border-2 border-secondary/50 rounded px-4"
+                    value={phone}
+                    onChange={
+                        (e)=>{
+                            setPhone(e.target.value);
+                        }
+                    }
+                />
+                </div>
+                <div className="flex flex-col w-full">
+                <label>Address</label>
+                <textarea 
+                    className="h-[75px] w-full border-2 border-secondary/50 rounded px-4"
+                    value={address}
+                    onChange={
+                        (e)=>{                    
+                            setAddress(e.target.value);
+                        }
+                    }
+                />
+                </div>
+            </div>
+
             <div className="w-[50%] h-[100px] rounded-xl overflow-hidden flex my-1 shadow-2xl justify-between items-center">
-                <button className=" h-[50px] bg-accent/80 hover:bg-accent text-white px-4 py-2 rounded m-4">
+                <button 
+                    onClick={submitOrder}
+                    className=" h-[50px] bg-accent/80 hover:bg-accent text-white px-4 py-2 rounded m-4">
                     Order Now
                 </button>
                 <span className="w-[150px] pr-4 text-xl font-bold text-right text-accent">
