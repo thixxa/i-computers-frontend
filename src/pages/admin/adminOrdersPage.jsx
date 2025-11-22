@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import toast from "react-hot-toast";
 import Loader from "../../components/loader";
+import ViewOrderInfo from "../../components/viewOrderInfo.jsx";
 
 export default function AdminOrdersPage() {
   const [orders, setOrders] = useState([]);
@@ -40,7 +41,7 @@ export default function AdminOrdersPage() {
           <div className="overflow-x-auto">
             {loaded ? 
             <table className="min-w-full table-auto">
-              <thead className="bg-secondary text-primary">
+              <thead className="bg-accent text-primary">
                 <tr className="text-left text-sm uppercase tracking-wider">
                   <th className="px-5 py-4">Order ID</th>
                   <th className="px-5 py-4">Customer Email</th>
@@ -70,6 +71,9 @@ export default function AdminOrdersPage() {
                         {order.name}
                       </td> 
                       <td className="px-5 py-4">
+                        {order.category}
+                      </td>
+                      <td className="px-5 py-4">
                         {new Date(order.date).toLocaleDateString()}
                       </td>
                       <td className="px-5 py-4">
@@ -77,6 +81,9 @@ export default function AdminOrdersPage() {
                         </td>
                         <td className="px-5 py-4">
                         LKR. {order.total.toFixed(2)}
+                      </td>
+                      <td className="px-5 py-4">
+                        <ViewOrderInfo order={order} />
                       </td>
                    </tr>
                   );
