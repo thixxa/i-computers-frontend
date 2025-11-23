@@ -14,11 +14,20 @@ export default function CartPage(){
         <div className="w-full flex flex-col items-center p-[20px] gap-4 justify-between">
             {
                 cart.map(
-                    (item)=>{
+                    (item, index)=>{
                         return(
-                            <div className="w-[50%] h-[150px] rounded-xl overflow-hidden flex my-1 shadow-2xl justify-between ">
-                                <img src={item.image} className="h-full aspect-square object-cover"/>
-                                <div className="w-[300px] flex flex-col justify-center p-4 gap-2">
+                            <div key={index} className="w-full lg:w-[50%] pt-[20px] relative lg:h-[200px] rounded-xl overflow-hidden flex my-1 shadow-2xl justify-between ">
+                                <h1 className="absolute top-[0px] lg:hidden w-full overflow-hidden h-[20px]">{item.name}</h1>
+                                <div className="h-full flex flex-col lg:flex-row">
+                                <img src={item.image} className=" h-[40px] lg:h-full aspect-square object-cover"/>
+                                <h2 className="text-md text-secondary/80 line-through lg:hidden">
+                                        LKR. {(item.labelledPrice).toFixed(2)}
+                                    </h2>
+                                    <h2 className="text-lg text-accent/80 font-semibold lg:hidden">
+                                        LKR. {(item.price).toFixed(2)} 
+                                    </h2>
+                                </div>
+                                <div className="w-[300px] hidden lg:flex flex-col justify-center p-4 gap-2">
                                     <h1 className="text-2xl font-semibold text-secondary">{item.name}</h1>
                                     <h3>ProductID: {item.productID}</h3>
                                     <h2 className="text-md text-secondary/80 line-through">
@@ -62,7 +71,7 @@ export default function CartPage(){
                     }
                 )  
             }
-            <div className="w-[50%] h-[100px] rounded-xl overflow-hidden flex my-1 shadow-2xl justify-between items-center">
+            <div className="w-[80%] lg:w-[40%] h-[100px] rounded-xl overflow-hidden flex my-1 shadow-2xl justify-between items-center">
                 <Link 
                     to="/checkout" 
                     className=" h-[50px] bg-accent/80 hover:bg-accent text-white px-4 py-2 rounded m-4"

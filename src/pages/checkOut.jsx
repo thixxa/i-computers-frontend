@@ -67,6 +67,7 @@ export default function CheckOutPage(){
         }).catch(
             (error)=>{
                 toast.error("Error placing order. Please try again");
+                
             }
         )
     }
@@ -77,9 +78,18 @@ export default function CheckOutPage(){
                 cart.map(
                     (item, index)=>{
                         return(
-                            <div className="w-[50%] h-[150px] rounded-xl overflow-hidden flex my-1 shadow-2xl justify-between" key={item.productID || index}>
-                                <img src={item.image} className="h-full aspect-square object-cover"/>
-                                <div className="w-[300px] flex flex-col justify-center p-4 gap-2">
+                            <div className="w-full lg:w-[50%] pt-[20px] relative lg:h-[200px] rounded-xl overflow-hidden flex my-1 shadow-2xl justify-between" key={item.productID || index}>
+                                <h1 className="absolute top-[0px] lg:hidden w-full overflow-hidden h-[20px]">{item.name}</h1>
+                                <div className="h-full flex flex-col lg:flex-row">
+                                <img src={item.image} className=" h-[40px] lg:h-full aspect-square object-cover"/>
+                                <h2 className="text-md text-secondary/80 line-through lg:hidden">
+                                        LKR. {(item.labelledPrice).toFixed(2)}
+                                    </h2>
+                                    <h2 className="text-lg text-accent/80 font-semibold lg:hidden">
+                                        LKR. {(item.price).toFixed(2)} 
+                                    </h2>
+                                </div>
+                                <div className="w-[300px] hidden lg:flex flex-col justify-center p-4 gap-2">
                                     <h1 className="text-2xl font-semibold text-secondary">{item.name}</h1>
                                     <h3>ProductID: {item.productID}</h3>
                                     <h2 className="text-md text-secondary/80 line-through">
@@ -126,12 +136,12 @@ export default function CheckOutPage(){
                     }
                 )  
             }
-            <div className="w-[50%] h-[200px] rounded-xl overflow-hidden flex flex-wrap my-1 shadow-2xl justify-between items-center">
+            <div className="w-full lg:w-[50%] h-[200px] rounded-xl overflow-hidden flex flex-wrap my-1 shadow-2xl justify-between items-center">
                 <div className="flex flex-col w-[50%]">
                 <label>Name</label>
                 <input 
                     type="text" 
-                    className="h-[50px] w-[70%] border-2 border-secondary/50 rounded px-4"
+                    className="h-[50px] w-[80%] border-2 border-secondary/50 rounded px-4"
                     value={name}
                     onChange={
                         (e)=>{
@@ -145,7 +155,7 @@ export default function CheckOutPage(){
                 <label>Phone</label>
                 <input 
                     type="text" 
-                    className="h-[50px] w-[70%] border-2 border-secondary/50 rounded px-4"
+                    className="h-[50px] w-[80%] border-2 border-secondary/50 rounded px-4"
                     value={phone}
                     onChange={
                         (e)=>{
@@ -168,7 +178,7 @@ export default function CheckOutPage(){
                 </div>
             </div>
 
-            <div className="w-[50%] h-[100px] rounded-xl overflow-hidden flex my-1 shadow-2xl justify-between items-center">
+            <div className="w-full lg:w-[50%] h-[100px] rounded-xl overflow-hidden flex my-1 shadow-2xl justify-between items-center">
                 <button 
                     onClick={submitOrder}
                     className=" h-[50px] bg-accent/80 hover:bg-accent text-white px-4 py-2 rounded m-4">

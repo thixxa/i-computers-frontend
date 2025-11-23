@@ -33,7 +33,7 @@ export default function AdminOrdersPage() {
       <div className="mx-auto max-w-7xl px-6 py-10">
         <div className="mb-6 flex items-center justify-between">
           <h1 className="text-2xl font-semibold tracking-tight">
-            Products
+            Orders
           </h1>
         </div>
 
@@ -46,7 +46,6 @@ export default function AdminOrdersPage() {
                   <th className="px-5 py-4">Order ID</th>
                   <th className="px-5 py-4">Customer Email</th>
                   <th className="px-5 py-4">Customer Name</th>
-                  <th className="px-5 py-4">Category</th>
                   <th className="px-5 py-4">Date</th>
                   <th className="px-5 py-4">Status</th>
                   <th className="px-5 py-4">Total Amount</th>
@@ -70,9 +69,6 @@ export default function AdminOrdersPage() {
                       <td className="px-5 py-4">
                         {order.name}
                       </td> 
-                      <td className="px-5 py-4">
-                        {order.category}
-                      </td>
                       <td className="px-5 py-4">
                         {new Date(order.date).toLocaleDateString()}
                       </td>

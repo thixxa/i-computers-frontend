@@ -77,12 +77,12 @@ export default function AdminProductPage() {
                       </td>
                       <td className="px-5 py-4">
                         <div className="inline-block rounded-lg bg-secondary/5 px-2 py-1 text-sm">
-                          ${item.price}
+                          LKR. {item.price}
                         </div>
                       </td>
                       <td className="px-5 py-4">
                         <div className="inline-block rounded-lg bg-secondary/5 px-2 py-1 text-sm ">
-                          ${item.labelledPrice}
+                          LKR. {item.labelledPrice}
                         </div>
                       </td>
                       <td className="px-5 py-4 text-secondary/80">

@@ -1,6 +1,9 @@
 import { Router } from "react-router-dom"
 import { Routes, Route } from "react-router-dom"
 import { Link } from "react-router-dom"
+import { useState } from "react"
+import { useEffect } from "react"
+import axios from "axios"
 import AdminProductPage from "./admin/adminProductPage.jsx"
 import AdminAddProductPage from "./admin/adminAddProductPage.jsx"
 import AdminUpdateProductPage from "./admin/adminUpdateProductPage.jsx"
@@ -10,14 +13,41 @@ import { LuClipboardList } from "react-icons/lu";
 import { LuBoxes } from "react-icons/lu";
 import { FiUsers } from "react-icons/fi";
 import { MdReviews } from "react-icons/md";
+import Loader from "../components/loader.jsx"
 
 
 
 
 
 export default function AdminPage() {
+
+    // Authentication check
+    const [user, setUser] = useState(null);
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if(token == null){
+            window.location.href = '/';
+            return;
+        }
+        axios.get(import.meta.env.VITE_BACKEND_URL + '/users/', {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        }).then((response) => {
+            if(response.data.role == 'admin'){
+                setUser(response.data);
+            }else{
+                window.location.href = '/';
+            }
+        }).catch(() => {
+            window.location.href = '/login';
+        });
+    },[])
+
     return (
         <div className="w-full h-full max-h-full flex bg-accent">
+            {user ?
+            <>
             <div className="w-[300px] h-full bg-accent">
                 <div className="w-full h-[100px] text-primary flex items-center ">
                     <img src="/logo.png" alt="Logo" className="h-full" />
@@ -47,6 +77,9 @@ export default function AdminPage() {
                 </Routes>
 
             </div>
+            </>:
+            <Loader />
+            }
 
         </div>
     )

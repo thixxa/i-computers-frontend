@@ -4,7 +4,8 @@ export default function ProdcutCard(props) {
     const product = props.product;
 
     return(
-        <div className="w-[250px] h-[450px] m-4 shadow-2xl cursor-pointer relative hover:[&_.buttons]:opacity-100">
+        <Link to={'/overview/'+ product.productID} 
+            className="w-[250px] h-[450px] m-4 shadow-2xl cursor-pointer relative hover:[&_.buttons]:opacity-100">
             <div className="w-full h-[250px] relative">
                 <img
                     src={product.images[1]}
@@ -30,12 +31,11 @@ export default function ProdcutCard(props) {
                 </div>
             </div>
             <div className="w-full h-[150px] bottom-0 opacity-0 absolute buttons bg-white transition-opacity duration-300 justify-center items-center flex flex-col gap-2">
-                <Link 
-                    to={'/overview/'+ product.productID}
+                <button 
                     className=" w-[70%] px-4 py-2 text-center bg-white border-2 border-accent text-accent hover:bg-accent hover:text-white rounded-md transistion">
                     View Details
-                </Link>
+                </button>
             </div>
-        </div>
+        </Link>
     );
 }
