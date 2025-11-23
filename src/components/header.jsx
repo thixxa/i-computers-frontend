@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { BiShoppingBag } from "react-icons/bi";
 import { LuListCollapse } from "react-icons/lu";
 import { useState } from "react";
+import UserData from "./userData.jsx";
 
 
 export default function Header(){
@@ -21,7 +22,12 @@ export default function Header(){
                 <Link to="/about">About</Link>
                 <Link to="/contact">Contact</Link>
             </div>
-            <Link to="/cart" className="w-[80px] h-full absolute right-0 flex justify-center items-center">
+            <div className="absolute right-20 top-1/4 items-center hidden lg:flex">
+                {/* UserData component can be placed here */}
+                <UserData />
+
+            </div>
+            <Link to="/cart" className="w-[50px] h-full absolute right-1 flex justify-center items-center">
                 <BiShoppingBag className="text-3xl"/>
             </Link>
             {
@@ -35,11 +41,14 @@ export default function Header(){
                             onClick={()=>{setSidebarOpen(false)}}
                             className="text-3xl text-primary my-auto absolute right-4 rotate-180"/>
                     </div>
-                    <div className="w-full h-full flex flex-col text-secondary text-2xl font-bold gap-3 px-4">
+                    <div className="w-full h-[200px] flex flex-col text-secondary text-2xl font-bold gap-3 px-4">
                         <a href="/" onClick={()=>setSidebarOpen(false)}>Home</a>
                         <a href="/products" onClick={()=>setSidebarOpen(false)}>Products</a>
                         <a href="/about" onClick={()=>setSidebarOpen(false)}>About</a>
                         <a href="/contact" onClick={()=>setSidebarOpen(false)}>Contact</a>
+                    </div>
+                    <div className="flex justify-center p-2 rounded-full">
+                        <UserData />
                     </div>
 
                 </div>
