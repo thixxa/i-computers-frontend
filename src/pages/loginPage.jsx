@@ -2,11 +2,31 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
+import { FcGoogle } from "react-icons/fc";
+import { useGoogleLogin } from '@react-oauth/google';
 
 export default function LoginPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    const googleLogin = useGoogleLogin({
+        onSuccess: (tokenResponse) => {
+            axios.post(import.meta.env.VITE_BACKEND_URL + "/users/google-login", {
+                token: tokenResponse.access_token
+            }).then((res) => {
+                //store the token in local storage
+                localStorage.setItem("token", res.data.token);
+                if(res.data.role === 'admin'){
+                    navigate('/admin');
+                }else{
+                    navigate('/');
+                }
+                toast.success("Login successful!");
+            }).catch((error) => {});
+        },
+        onError: () => {toast.error("Google Login Failed");},
+        onNonOAuthError: () => {toast.error("Google Login Failed");}
+      });
 
     async function login(){
         //login logic here
@@ -83,8 +103,13 @@ export default function LoginPage() {
                     </p>
                     <button
                         onClick={login} //login button eka click karama login function eka call wenawa
-                        className="w-[80%] h-[50px] bg-transparent text-white text-[20px] font-bold rounded-lg border-[2px] border-accent hover:bg-accent hover:text-white">
+                        className="w-[80%] h-[50px] bg-transparent text-white text-[20px] font-bold rounded-lg border-[2px] border-accent hover:bg-accent hover:text-white mb-[20px]">
                         Login
+                    </button>
+                    <button 
+                        onClick={()=> googleLogin()}
+                        className="w-[80%] h-[50px] bg-transparent text-white text-[20px] font-bold rounded-lg border-[2px] border-accent hover:bg-accent hover:text-white">
+                        <FcGoogle className="inline-block ml-2 mb-1"/>
                     </button>
                     <p className="text-[16px] text-white mt-[20px] not-italic">
                         Don't have an account?
