@@ -50,7 +50,7 @@ export default function AdminPage() {
             <>
             <div className="w-[300px] h-full bg-accent">
                 <div className="w-full h-[100px] text-primary flex items-center ">
-                    <img src="/logo.png" alt="Logo" className="h-full" />
+                    <img src="/logo2.png" alt="Logo" className="h-full" />
                     <h1 className="text-2xl">
                         Admin 
                     </h1>

@@ -15,7 +15,7 @@ export default function Header(){
             <LuListCollapse 
                 onClick={()=>{setSidebarOpen(true)}}
                 className="text-3xl text-primary my-auto p-[5px]left-4 lg:hidden " />
-            <img src="/logo.png" alt="Logo" className="h-full " />
+            <img src="/logo2.png" alt="Logo" className="h-full " />
             <div className="w-full h-full hidden lg:flex text-primary justify-center gap-[30px] text-2xl font-bold items-center ">
                 <Link to="/">Home</Link>
                 <Link to="/products">Products</Link>
@@ -36,7 +36,7 @@ export default function Header(){
             <div className="w-[250px] h-screen flex-col border-2 relative">
                 <div className="absolute w-full h-full bg-white left-[-250px] transform-flat translate-x-[250px] transition-transform duration-300 flex flex-col">
                     <div className="w-full h-[100px] bg-accent flex items-center px-4">
-                        <img src="/logo.png" alt="Logo" className="h-full " />
+                        <img src="/logo2.png" alt="Logo" className="h-full " />
                         <LuListCollapse 
                             onClick={()=>{setSidebarOpen(false)}}
                             className="text-3xl text-primary my-auto absolute right-4 rotate-180"/>

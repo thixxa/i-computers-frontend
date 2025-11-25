@@ -105,7 +105,7 @@ export default function AdminProductPage() {
                         <div className="flex items-center gap-2 text-sm text-accent">
                           <Link
                             to="/admin/update-product"
-                            className="px-3 py-2 rounded-md w-[90px] text-center text-white bg-accent"
+                            className="px-3 py-2 rounded-md w-[90px] text-center text-white bg-accent/70 hover:bg-accent"
                             //state eka ganne data dala yawanna. apita danata product eke wisathara tika one hinda. 
                             //api wenas karanne danata thiyena wisthara ne. 
                             //state eken danata thiyena wisthara tika dala yawanawa

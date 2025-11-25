@@ -3,7 +3,7 @@
 @theme {
     --color-primary: #F4F7FE;
     --color-secondary: #1E1E2F;
-    --color-accent: #3A8DFF;
+    --color-accent: #007BFF;
 }
     /* Customize the scrollbar track */
     ::-webkit-scrollbar-track {

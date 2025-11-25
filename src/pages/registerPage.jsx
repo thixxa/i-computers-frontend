@@ -49,18 +49,18 @@ export default function RegisterPage() {
     }
 
     return(
-        <div className="w-full h-screen bg-[url('/bglogin.jpg')] bg-center bg-cover bg-no-repeat flex">
-            <div className="w-[50%] h-full flex flex-col justify-center items-center">
-                <img src="/logo.png" alt="Logo" className="w-[200px] h-[200px] mb-[20px] object-cover"/>
-                <h1 className="text-[50px] text-[#3216cf] text-shadow-black font-bold">
-                    Plug In  . Power up . Play Hard
+        <div className="w-full min-h-screen bg-[url('/bglogin1.png')] bg-center bg-cover lg:bg-no-repeat flex flex-col lg:flex-row gap-4 p-4 lg:p-20">
+            <div className="w-full lg:w-[50%] flex flex-col justify-center items-center">
+                <img src="/logo2.png" alt="Logo" className="w-[300px] h-[300px] mb-[20px] object-cover"/>
+                <h1 className="text-[50px] text-[#007BFF] text-shadow-black font-bold text-center mb-[20px]">
+                    Plug In  . Power Up . Play Hard
                 </h1>
                 <p className="text-[30px] text-white font-semibold text-center italic">
                     Your ultimate destination for gaming gear and accessories. Elevate your gaming experience with our top-notch products designed for gamers by gamers.
                 </p>
 
             </div>
-            <div className="w-[50%] h-full flex justify-center items-center">
+            <div className="w-full lg:w-[50%] flex justify-center items-center">
                 <div className="w-[450px] h-[600px] backdrop-blur-lg shadow-2xl rounded-2xl flex flex-col justify-center items-center">
                     <h1 className="text-[30px] font-semibold mb-[20px] text-accent text-shadow-white">
                         Register Here
