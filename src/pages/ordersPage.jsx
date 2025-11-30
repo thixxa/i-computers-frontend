@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import Loader from "../components/loader.jsx";
-import ViewOrderInfoCustomers from "../components/viewOrderInfoCustomers.jsx";
+import ViewOrderInfoCustomer from "../components/viewOrderInfoCustomer.jsx";
 
 export default function OrdersPage() {
   const [orders, setOrders] = useState([]);
@@ -25,7 +25,7 @@ export default function OrdersPage() {
         });
     }
     
-  }, []); 
+  }, [loaded]); 
 
   return (
     <div className="min-h-screen w-full bg-primary/60 text-secondary">
@@ -38,7 +38,7 @@ export default function OrdersPage() {
 
         <div className="overflow-hidden rounded-2xl border border-secondary/10 bg-white shadow-xl">
           <div className="overflow-x-auto">
-            {loaded ? 
+            {loaded ? ( 
             <table className="min-w-full table-auto">
               <thead className="bg-accent text-primary">
                 <tr className="text-left text-sm uppercase tracking-wider">
@@ -78,13 +78,13 @@ export default function OrdersPage() {
                         LKR. {order.total.toFixed(2)}
                       </td>
                       <td className="px-5 py-4">
-                        <ViewOrderInfoCustomers order={order} />
+                        <ViewOrderInfoCustomer order={order} />
                       </td>
                    </tr>
                   );
                 })}
               </tbody>
-            </table>:<Loader />}
+            </table>):(<Loader />)}
           </div>
         </div>
       </div>

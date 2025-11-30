@@ -1,8 +1,6 @@
-
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
-import toast from "react-hot-toast";
 import Loader from "../../components/loader";
 import ViewOrderInfo from "../../components/viewOrderInfo.jsx";
 
@@ -17,7 +15,7 @@ export default function AdminOrdersPage() {
         .get(import.meta.env.VITE_BACKEND_URL + "/orders",{
             headers: {
                 Authorization: `Bearer ${token}`,
-            },
+            }
         })
         .then((response) => {
             console.log(response.data);
@@ -39,7 +37,7 @@ export default function AdminOrdersPage() {
 
         <div className="overflow-hidden rounded-2xl border border-secondary/10 bg-white shadow-xl">
           <div className="overflow-x-auto">
-            {loaded ? 
+            {loaded ? ( 
             <table className="min-w-full table-auto">
               <thead className="bg-accent text-primary">
                 <tr className="text-left text-sm uppercase tracking-wider">
@@ -85,7 +83,7 @@ export default function AdminOrdersPage() {
                   );
                 })}
               </tbody>
-            </table>:<Loader/>}
+            </table>):(<Loader />)}
           </div>
         </div>
       </div>

@@ -72,8 +72,8 @@ export default function RegisterPage() {
                             }
                         }
                         type ="text" 
-                        placeholder="Your First Name" 
-                        className="w-[80%] h-[50px] mb-[20px] rounded-lg border-2 border-gray-300 px-4 text-[20px] focus:outline-none focus:border-accent"
+                        placeholder="First Name" 
+                        className="w-[80%] h-[50px] mb-[20px] rounded-lg border-2 border-gray-300 px-4 text-[20px] focus:outline-none focus:border-accent text-white"
                     />
                     <input 
                         onChange={
@@ -82,8 +82,8 @@ export default function RegisterPage() {
                             }
                         }
                         type ="text" 
-                        placeholder="Your Last Name" 
-                        className="w-[80%] h-[50px] mb-[20px] rounded-lg border-2 border-gray-300 px-4 text-[20px] focus:outline-none focus:border-accent"
+                        placeholder="Last Name" 
+                        className="w-[80%] h-[50px] mb-[20px] rounded-lg border-2 border-gray-300 px-4 text-[20px] focus:outline-none focus:border-accent text-white"
                     />
                     <input 
                         onChange={
@@ -92,8 +92,8 @@ export default function RegisterPage() {
                             }
                         }
                         type ="email" 
-                        placeholder="Your Email" 
-                        className="w-[80%] h-[50px] mb-[20px] rounded-lg border-2 border-gray-300 px-4 text-[20px] focus:outline-none focus:border-accent"
+                        placeholder="Email" 
+                        className="w-[80%] h-[50px] mb-[20px] rounded-lg border-2 border-gray-300 px-4 text-[20px] focus:outline-none focus:border-accent text-white"
                     />
                     <input 
                         onChange={
@@ -102,8 +102,8 @@ export default function RegisterPage() {
                             }
                         }
                         type ="password" 
-                        placeholder="Your Password" 
-                        className="w-[80%] h-[50px] mb-[20px] rounded-lg border-2 border-gray-300 px-4 text-[20px] focus:outline-none focus:border-accent"
+                        placeholder="Password" 
+                        className="w-[80%] h-[50px] mb-[20px] rounded-lg border-2 border-gray-300 px-4 text-[20px] focus:outline-none focus:border-accent text-white"
                     />
                     <input 
                         onChange={
@@ -112,8 +112,8 @@ export default function RegisterPage() {
                             }
                         }
                         type ="password" 
-                        placeholder="Confirm Your Password" 
-                        className="w-[80%] h-[50px] mb-[20px] rounded-lg border-2 border-gray-300 px-4 text-[20px] focus:outline-none focus:border-accent"
+                        placeholder="Confirm Password" 
+                        className="w-[80%] h-[50px] mb-[20px] rounded-lg border-2 border-gray-300 px-4 text-[20px] focus:outline-none focus:border-accent text-white"
                     />
                     <button
                         onClick={register} //register button eka click karama register function eka call wenawa

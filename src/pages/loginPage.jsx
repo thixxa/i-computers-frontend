@@ -84,7 +84,7 @@ export default function LoginPage() {
                         }
                         type ="email" 
                         placeholder="Your Email" 
-                        className="w-[80%] h-[50px] mb-[20px] rounded-lg border-2 border-gray-300 px-4 text-[20px] focus:outline-none focus:border-accent"
+                        className="w-[80%] h-[50px] mb-[20px] rounded-lg border-2 border-gray-300 px-4 text-[20px] focus:outline-none focus:border-accent text-white"
                     />
                     <input 
                         onChange={
@@ -94,7 +94,7 @@ export default function LoginPage() {
                         }
                         type ="password" 
                         placeholder="Your Password" 
-                        className="w-[80%] h-[50px] rounded-lg border-2 border-gray-300 px-4 text-[20px] focus:outline-none focus:border-accent"
+                        className="w-[80%] h-[50px] rounded-lg border-2 border-gray-300 px-4 text-[20px] focus:outline-none focus:border-accent text-white"
                     />
                     <p className="w-[80%] text-right mb-[20px]">
                         <Link to="/forgot-password" className="text-accent hover:underline italic">

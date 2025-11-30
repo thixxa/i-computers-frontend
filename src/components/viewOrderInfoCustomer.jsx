@@ -1,8 +1,7 @@
 import { useState } from "react";
-import React from "react";
 import Modal from "react-modal";
 
-export default function ViewOrderInfoCustomers(props) {
+export default function ViewOrderInfoCustomer(props) {
     const order = props.order
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [status, setStatus] = useState(order.status);
