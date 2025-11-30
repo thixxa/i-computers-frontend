@@ -41,8 +41,9 @@ export default function UserData(){
 
                 }}>
                     <option value={"user"}>{user.firstName}</option>
-                    <option value={"logout"}>Logout</option>
                     <option value={"my-orders"}>My Orders</option>
+                    <option value={"logout"}>Logout</option>
+                    
                 </select>
             </div>:
             <div className="w-[150px] flex flex-row">

@@ -29,11 +29,11 @@ export default function ProductPage(){
             {
                 !loaded? <Loader/>:
                 <div className="w-full flex justify-center p-4 flex-row flex-wrap">
-                    <div className="w-full h-[100px] sticky top-0 bg-white flex justify-center items-center mb-4">
+                    <div className="w-full h-[75px] sticky top-0 bg-white flex justify-center items-center mb-4 z-10">
                         <input
                             type="text"
                             placeholder="Search products..."
-                            className="w-1/2 px-4 py-2 border border-secondary/30 rounded-lg outline-none"
+                            className="w-1/2 px-4 py-2 border border-secondary/30 rounded-full outline-none"
                             onChange={async (e)=>{
                                     if(e.target.value == ""){
                                         setLoaded(false);

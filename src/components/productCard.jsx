@@ -30,7 +30,7 @@ export default function ProdcutCard(props) {
                     </h2>
                 </div>
             </div>
-            <div className="w-full h-[150px] bottom-0 opacity-0 absolute buttons bg-white transition-opacity duration-300 justify-center items-center flex flex-col gap-2">
+            <div className="w-full h-[140px] bottom-0 opacity-0 absolute buttons bg-white transition-opacity duration-300 justify-center items-center flex flex-col gap-2">
                 <button 
                     className=" w-[70%] px-4 py-2 text-center bg-white border-2 border-accent text-accent hover:bg-accent hover:text-white rounded-md transistion">
                     View Details
