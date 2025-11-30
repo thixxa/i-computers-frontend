@@ -28,7 +28,7 @@ export default function UserData(){
         {
             user?
             <div className="w-[150px] flex flex-row">
-                <img src="default.jpg" className="w-[50px] rounded-full mr-2"/>
+                <img src={user.image ? user.image : "default.jpg"} referrerPolicy="no-referrer" className="w-[50px] rounded-full mr-2"/> {/* referrerPolicy eka damme nathnam google eke image eka apita load wen na */}
                 <select className="bg-transparent outline-none ml-2 text-black font-bold" value={selectedOption}
                 onChange={(e)=>{
                     if(e.target.value == "logout"){
