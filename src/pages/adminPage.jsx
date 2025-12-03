@@ -57,10 +57,10 @@ export default function AdminPage() {
                     </h1>
                 </div>
                 <div className="w-full h-[400px] text-white text-2xl flex flex-col pl-[20px] pt-[20px]">
-                    <Link to="/admin/"className="w-full flex items-center h-[50px] gap-[10px]"><LuClipboardList />Orders</Link>
-                    <Link to="/admin/products"className="w-full flex items-center h-[50px] gap-[10px]"><LuBoxes />Products</Link>
-                    <Link to="/admin/users"className="w-full flex items-center h-[50px] gap-[10px]"><FiUsers />Users</Link>
-                    <Link to="/admin/reviews"className="w-full flex items-center h-[50px] gap-[10px]"><MdReviews />Reviews</Link>
+                    <Link to="/admin/"className="w-full flex items-center h-[50px] gap-[10px] hover:scale-110 transition-transform"><LuClipboardList />Orders</Link>
+                    <Link to="/admin/products"className="w-full flex items-center h-[50px] gap-[10px] hover:scale-110 transition-transform"><LuBoxes />Products</Link>
+                    <Link to="/admin/users"className="w-full flex items-center h-[50px] gap-[10px] hover:scale-110 transition-transform"><FiUsers />Users</Link>
+                    <Link to="/admin/reviews"className="w-full flex items-center h-[50px] gap-[10px] hover:scale-110 transition-transform"><MdReviews />Reviews</Link>
 
                 </div>
 

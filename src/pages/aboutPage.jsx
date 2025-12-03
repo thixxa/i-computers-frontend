@@ -98,7 +98,7 @@ export default function AboutPage() {
           </p>
           <a
             href="/products"
-            className="inline-block px-6 py-3 bg-accent/60 text-white rounded-full text-sm font-semibold hover:bg-accent transition"
+            className="inline-block px-6 py-3 bg-accent/60 text-white rounded-full text-sm font-semibold hover:bg-accent hover:scale-105 transition-transform"
           >
             Shop Now
           </a>

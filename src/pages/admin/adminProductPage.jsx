@@ -67,7 +67,7 @@ export default function AdminProductPage() {
             {loaded ? (
               <table className="min-w-full table-auto">
                 <thead className="bg-secondary text-primary">
-                  <tr className="text-left text-sm uppercase tracking-wider">
+                  <tr className="text-left text-sm uppercase tracking-wider hover:bg-secondary/90">
                     <th className="px-5 py-4 text-center">Image</th>
                     <th className="px-5 py-4 text-center">Product ID</th>
                     <th className="px-5 py-4 text-center">Name</th>
