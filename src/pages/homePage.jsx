@@ -7,6 +7,7 @@ import CheckOutPage from "./checkOut.jsx";
 import OrdersPage from "./ordersPage.jsx";
 import AboutPage from "./aboutPage.jsx";
 import ContactPage from "./contactPage.jsx";
+import HomeViewPage from "./homeViewPage.jsx";
 
 export default function HomePage() {
     return (
@@ -14,7 +15,7 @@ export default function HomePage() {
             <Header/>
             <div className="w-full min-h-[calc(100%-100px)] overflow-y-scroll">
                 <Routes>
-                    <Route path='/' element={<h1>Home Page</h1>} />
+                    <Route path='/' element={<HomeViewPage/>} />
                     <Route path='/products' element={<ProductPage/>} />
                     <Route path='/about' element={<AboutPage/>} />
                     <Route path='/contact' element={<ContactPage/>} />
