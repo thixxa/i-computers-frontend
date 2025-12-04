@@ -8,6 +8,7 @@ import OrdersPage from "./ordersPage.jsx";
 import AboutPage from "./aboutPage.jsx";
 import ContactPage from "./contactPage.jsx";
 import HomeViewPage from "./homeViewPage.jsx";
+import Footer from "../components/footer.jsx";
 
 export default function HomePage() {
     return (
@@ -27,6 +28,7 @@ export default function HomePage() {
                 </Routes>
 
             </div>
+            <Footer/>
 
         </div>
     )

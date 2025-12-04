@@ -37,7 +37,7 @@ export default function ContactPage() {
                 <p className="text-xl font-bold text-accent flex justify-center items-center gap-2">
                   <BsTelephone /> Call
                 </p>
-                <p className="text-md text-secondary/70 mt-1">+941123456789</p>
+                <p className="text-md text-secondary/70 mt-1">+94112345678</p>
               </Link>
 
               <Link to="#" className="bg-white shadow-md rounded-xl px-4 py-4 text-center hover:scale-105 transition-transform">
