@@ -9,6 +9,7 @@ import AdminAddProductPage from "./admin/adminAddProductPage.jsx"
 import AdminUpdateProductPage from "./admin/adminUpdateProductPage.jsx"
 import AdminOrdersPage from "./admin/adminOrdersPage.jsx"
 import AdminUsersPage from "./admin/adminUsersPage.jsx"
+import AdminReviewPage from "./admin/adminReviewPage.jsx"
 
 import { LuClipboardList } from "react-icons/lu";
 import { LuBoxes } from "react-icons/lu";
@@ -72,7 +73,7 @@ export default function AdminPage() {
                     <Route path='/add-product' element={<AdminAddProductPage />} />
                     <Route path='/update-product' element={<AdminUpdateProductPage/>}/>
                     <Route path='/users' element={<AdminUsersPage />} />
-                    <Route path='/reviews' element={<h1 className="text-3xl text-black">Reviews</h1>} />
+                    <Route path='/reviews' element={<AdminReviewPage />} />
 
 
                 </Routes>

@@ -30,8 +30,8 @@ export default function AdminOrdersPage() {
     <div className="min-h-screen w-full bg-primary/60 text-secondary">
       <div className="mx-auto max-w-7xl px-6 py-10">
         <div className="mb-6 flex items-center justify-between">
-          <h1 className="text-2xl font-semibold tracking-tight">
-            Orders
+          <h1 className="text-3xl lg:text-4xl font-extrabold">
+            Manage customer orders
           </h1>
         </div>
 
