@@ -22,7 +22,7 @@ export default function HomePage() {
                 <span className="text-accent">gaming setup.</span>
               </h1>
 
-              <p className="text-sm sm:text-base text-gray-200/90 max-w-xl leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-200/90 max-w-xl leading-relaxed text-justify">
                 i Computers is your local hub for gaming laptops, custom gaming
                 PCs and pro-grade accessories. From casual play to esports,
                 we&apos;ll build a setup that keeps up with your skills.
@@ -31,23 +31,23 @@ export default function HomePage() {
               <div className="flex flex-wrap gap-3 pt-2">
                 <Link
                   to="/products"
-                  className="px-6 py-3 rounded-full border-2 text-sm font-semibold bg-accent/30 text-white hover:bg-accent transition hover:scale-105"
+                  className="px-6 py-3 rounded-full border-2 text-sm font-semibold bg-accent lg:bg-accent/30 text-white lg:hover:bg-accent transition hover:scale-105"
                 >
                   View Gaming Products
                 </Link>
               </div>
 
               <div className="flex flex-wrap gap-2 pt-4 text-[11px] sm:text-lg text-gray-200">
-                <span className="px-3 py-1 rounded-full bg-black/40">
+                <span className="px-3 py-1 rounded-full bg-white/20">
                   Gaming Laptops
                 </span>
-                <span className="px-3 py-1 rounded-full bg-black/40">
+                <span className="px-3 py-1 rounded-full bg-white/20">
                   Custom Gaming PCs
                 </span>
-                <span className="px-3 py-1 rounded-full bg-black/40">
+                <span className="px-3 py-1 rounded-full bg-white/20">
                   Monitors & Peripherals
                 </span>
-                <span className="px-3 py-1 rounded-full bg-black/40">
+                <span className="px-3 py-1 rounded-full bg-white/20">
                   RGB Accessories
                 </span>
               </div>
@@ -55,9 +55,9 @@ export default function HomePage() {
             <div className="w-full">
               <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl shadow-2xl p-6 lg:p-7 space-y-4">
                 <h2 className="text-lg font-semibold text-white">
-                  Choose your play style.
+                  Choose your play style
                 </h2>
-                <p className="text-xs sm:text-sm text-gray-200/90 leading-relaxed">
+                <p className="text-xs sm:text-sm text-gray-200/90 leading-relaxed text-justify">
                   FPS, MOBA, RPG or streaming – tell us your favourite games and
                   budget, and we&apos;ll suggest the best laptop or custom PC
                   with the right graphics, processor and peripherals.
@@ -101,9 +101,9 @@ export default function HomePage() {
                 <div className="text-center">
                 <Link
                   to="/contact"
-                  className="inline-block w-[30%] mt-2 px-4 py-2.5 rounded-full border-2 text-sm font-semibold bg-accent/30 text-white hover:bg-accent transition hover:scale-105"
+                  className="inline-block w-[30%] mt-2 px-4 py-2.5 rounded-full border-2 text-sm font-semibold bg-accent lg:bg-accent/30 text-white lg:hover:bg-accent transition hover:scale-105"
                 >
-                  Get Gaming Setup Advice
+                  Get Advice
                 </Link>
                 </div>
               </div>

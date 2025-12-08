@@ -112,7 +112,7 @@ export default function Footer() {
             <h2>Follow Us</h2>
             <a
               href="#"
-              className="p-2 rounded-full border border-accent/40 hover:bg-accent hover:text-primary transition-colors duration-150"
+              className="p-2 rounded-full border border-accent/40 lg:hover:bg-accent lg:hover:text-primary transition-colors duration-150"
             >
               <FaFacebook size={20} />
             </a>

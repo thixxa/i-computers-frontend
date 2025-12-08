@@ -7,7 +7,7 @@ export default function AboutPage() {
             <p className="uppercase tracking-[0.25em] text-sm text-accent/80 font-semibold">
               About Us
             </p>
-            <h1 className="text-3xl lg:text-4xl font-extrabold">
+            <h1 className="text-2xl lg:text-4xl font-extrabold">
               Welcome to <span className="text-accent">i Computers</span>
             </h1>
             <p className="text-base lg:text-lg text-secondary leading-relaxed text-justify">
@@ -45,7 +45,7 @@ export default function AboutPage() {
 
           <div className="flex-1 w-full">
             <div className="bg-white rounded-2xl shadow-2xl p-6 lg:p-8 border border-accent/10">
-              <h2 className="text-2xl font-bold mb-3">
+              <h2 className="text-xl lg:text-2xl font-bold mb-3">
                 What We Offer
               </h2>
               <ul className="text-md text-secondary space-y-2 list-disc list-inside mb-4">
@@ -67,7 +67,7 @@ export default function AboutPage() {
 
         <div className="mt-12 lg:mt-16 grid lg:grid-cols-2 gap-8">
           <div className="bg-white rounded-2xl shadow-md p-6 border border-accent/5">
-            <h2 className="text-2xl font-bold mb-3">Our Mission</h2>
+            <h2 className="text-xl lg:text-2xl font-bold mb-3">Our Mission</h2>
             <p className="text-md text-secondary leading-relaxed text-justify">
               At i Computers, our mission is to make technology simple,
               reliable, and accessible for everyone. We focus on providing
@@ -77,7 +77,7 @@ export default function AboutPage() {
           </div>
 
           <div className="bg-accent/5 rounded-2xl shadow-md p-6 border border-accent/10">
-            <h2 className="text-2xl font-bold mb-3">Why Choose <span className="text-accent">i Computers</span> ? </h2>
+            <h2 className="text-xl lg:text-2xl font-bold mb-3">Why Choose <span className="text-accent">i Computers</span> ? </h2>
             <ul className="text-md text-secondary space-y-2 list-disc list-inside">
               <li>Genuine and reliable computer brands</li>
               <li>Friendly, experienced staff to guide you</li>
@@ -98,7 +98,7 @@ export default function AboutPage() {
           </p>
           <a
             href="/products"
-            className="inline-block px-6 py-3 bg-accent/60 text-white rounded-full text-sm font-semibold hover:bg-accent hover:scale-105 transition-transform"
+            className="inline-block px-6 py-3 bg-accent lg:bg-accent/60 text-white rounded-full text-sm font-semibold hover:bg-accent hover:scale-105 transition-transform"
           >
             Shop Now
           </a>
