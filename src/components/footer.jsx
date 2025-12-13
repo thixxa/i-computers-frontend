@@ -108,11 +108,11 @@ export default function Footer() {
             </li>
           </ul>
 
-          <div className="flex items-center gap-3 mt-4">
-            <h2>Follow Us</h2>
+          <div className="flex items-center gap-1.5 lg:gap-3 mt-4">
+            <h2>Follow</h2>
             <a
               href="#"
-              className="p-2 rounded-full border border-accent/40 lg:hover:bg-accent lg:hover:text-primary transition-colors duration-150"
+              className="p-2 rounded-full border border-accent/40 hover:bg-accent hover:text-primary transition-colors duration-150"
             >
               <FaFacebook size={20} />
             </a>
