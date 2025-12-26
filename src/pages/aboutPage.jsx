@@ -19,18 +19,11 @@ export default function AboutPage() {
                 Welcome to <span className="text-accent">i Computers</span>
               </h1>
               <p className="text-base lg:text-lg text-primary/70 leading-relaxed text-justify">
-                i Computers is your trusted partner for all kinds of computer
+                i Computers is your trusted partner for all kinds of gaming computer
                 products and services. From brand new laptops and desktops to
                 accessories, upgrades, and repairs, we provide everything you need
                 to stay connected and productive.
               </p>
-              <p className="text-sm text-primary/70 leading-relaxed text-justify">
-                Whether you&apos;re a student, gamer, professional, or business
-                owner, we help you choose the right device that fits your work,
-                lifestyle, and budget. Our goal is simple: give you genuine products, 
-                honest advice, and fast, friendly service.
-              </p>
-
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
                 <div className="bg-white/15 shadow-md rounded-xl px-4 py-3 text-center">
                   <p className="text-xl font-bold text-accent">Genuine</p>
@@ -59,7 +52,7 @@ export default function AboutPage() {
                 <ul className="text-md text-primary/70 space-y-2 list-disc list-inside mb-4">
                   <li>Brand new laptops, desktops, and all-in-one PCs</li>
                   <li>Monitors, keyboards, mice, and other accessories</li>
-                  <li>Custom-built PCs for work, gaming, or content creation</li>
+                  <li>Custom-built PCs for gaming</li>
                   <li>Upgrades: RAM, SSD, graphics cards, and more</li>
                   <li>Software installation and basic setup</li>
                   <li>Hardware diagnostics, repairs, and maintenance</li>
