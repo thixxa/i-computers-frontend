@@ -52,7 +52,7 @@ export default function RegisterPage() {
         <div className="w-full min-h-screen bg-[url('/bglogin1.png')] bg-center bg-cover lg:bg-no-repeat flex flex-col lg:flex-row gap-4 p-4 lg:p-20">
             <div className="w-full lg:w-[50%] flex flex-col justify-center items-center">
                 <img src="/logo2.png" alt="Logo" className="w-[300px] h-[300px] mb-[20px] object-cover"/>
-                <h1 className="text-[50px] text-[#007BFF] text-shadow-black font-bold text-center mb-[20px]">
+                <h1 className="text-[50px] text-accent text-shadow-black font-bold text-center mb-[20px]">
                     Plug In  . Power Up . Play Hard
                 </h1>
                 <p className="text-[30px] text-white font-semibold text-center italic">
